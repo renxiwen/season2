@@ -1,0 +1,30 @@
+[toolchain]
+package_manager = "yarn"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+cpi = "9RFddyArv28ekPdDuR8JdzhHtnpBSQUahXFcruAyNV1A"
+cpi_on_pda = "DdZd8CSY9wiLM9ncTbi9fWbQFJZPsTv6HWkL8hqAMJhw"
+custom_err = "CeVtGbv79Q4XPr6AT99eT8pJfH7wZszaSTH1fNytRX8d"
+dfc = "9SLyQCnidtq2qaW2h2Zn3okJyPVgYof47EqLvCqdaxkG"
+emit = "FANaQzvSCrh6kzT1Ak9vvuwm4LCwd6ZDEXdTcFbc2YaL"
+example = "Ad4FYchFp39sgEwXzfK3P9t9EYhkow5h6y7NE7tBaWQu"
+pda = "DFwuBPK5wVHGW1kduMz6dp5pNUbZPaxj2WowqibbmKfh"
+program_structure = "59SenRKAbaVQM2pDrqy9P1uUDxb3ocd44vDqb8omAVYB"
+season2 = "7LSz4stbs3QRXKTYtptLBJN5Rfx2Hk54uCePcPX8JhV9"
+token_mint = "5bstEFi7q1vnPQqTCrjYY7pzChPJH2829LtPZCiucex6"
+token_mint_pda = "CNvr5dMyG3ytxYwQ78CvbdDQjtnzyknNDSZs7cHcXNzP"
+zero_copy1 = "7yefzEXZGxsj14hDR4ZaV8WexRAJ9ma6PXtKbu8AH9pM"
+zero_copy_larger = "AVqkgwn5EGiEr9vMJXckC9UY3vF1ynQhtDwGr3Cfq14i"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test"
+
+[hooks]

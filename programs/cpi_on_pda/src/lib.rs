@@ -1,0 +1,48 @@
+use anchor_lang::prelude::*;
+use anchor_lang::system_program::{Transfer,transfer};
+
+declare_id!("DdZd8CSY9wiLM9ncTbi9fWbQFJZPsTv6HWkL8hqAMJhw");
+
+#[program]
+pub mod cpi_on_pda {
+    
+
+    use super::*;
+
+    pub fn sol_transfer(ctx: Context<SolTransfer>,amount: u64) -> Result<()> {
+        let from = ctx.accounts.pda_account.to_account_info();
+        let to = ctx.accounts.recipient.to_account_info();
+        let program_id = ctx.accounts.system_program.key();
+        
+        let seed = to.key();
+        let bump_seed = ctx.bumps.pda_account;
+        let signer_seeds: &[&[&[u8]]]= &[&[b"pda",seed.as_ref(),&[bump_seed]]];
+        let cpi_context = CpiContext::new(
+            program_id,
+            Transfer{
+                from,
+                to
+            },
+        ).with_signer(signer_seeds);
+        transfer(cpi_context,amount)?;
+        Ok(())
+    }
+}
+
+
+
+#[derive(Accounts)]
+pub struct SolTransfer<'info> {
+    
+    #[
+        account(
+            mut,
+            seeds = [b"pda",recipient.key().as_ref()],
+            bump
+        )
+    ]
+    pda_account: SystemAccount<'info>,
+    #[account[mut]]
+    recipient: SystemAccount<'info>,
+    system_program: Program<'info,System>,
+}
