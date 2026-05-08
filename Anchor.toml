@@ -8,6 +8,8 @@ skip-lint = false
 [programs.localnet]
 cpi = "9RFddyArv28ekPdDuR8JdzhHtnpBSQUahXFcruAyNV1A"
 cpi_on_pda = "DdZd8CSY9wiLM9ncTbi9fWbQFJZPsTv6HWkL8hqAMJhw"
+create_ata = "4t4EiJ7HZQLNeUBiRscj74XyPFpzYPzPw4d4uAwhSvVT"
+create_token_account_pda = "E4uv4rhuhtKwXHE1FNVZzcGpiBkBTosGt9ezSjjYjNj3"
 custom_err = "CeVtGbv79Q4XPr6AT99eT8pJfH7wZszaSTH1fNytRX8d"
 dfc = "9SLyQCnidtq2qaW2h2Zn3okJyPVgYof47EqLvCqdaxkG"
 emit = "FANaQzvSCrh6kzT1Ak9vvuwm4LCwd6ZDEXdTcFbc2YaL"
