@@ -4248,6 +4248,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "transfer_with_pda_token_account"
+version = "0.1.0"
+dependencies = [
+ "anchor-lang",
+ "anchor-spl",
+]
+
+[[package]]
 name = "typenum"
 version = "1.20.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
